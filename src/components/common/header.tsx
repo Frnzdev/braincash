@@ -16,46 +16,42 @@ const Header = () => {
   const userId = session?.user?.id;
   const { data: credit } = useUserCredit(userId);
 
-  if (!session) {
-    return (
-      <header className="flex items-center justify-between p-3 dark:bg-[#1C1C1C]">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" width={85} height={85} alt="logo BrainCash" />
-          <h1 className="text-xl font-bold">BrainCash</h1>
-        </Link>
+  return (
+    <header className="flex flex-wrap items-center justify-between p-3 dark:bg-[#1C1C1C]">
+      {/* Logo */}
+      <Link href="/" className="flex flex-shrink-0 items-center gap-2">
+        <Image
+          src="/logo.png"
+          width={60}
+          height={60}
+          alt="logo BrainCash"
+          className="sm:h-[85px] sm:w-[85px]"
+        />
+        <h1 className="text-lg font-bold sm:text-xl">BrainCash</h1>
+      </Link>
 
-        <div className="ml-auto flex items-center gap-3">
-          <Button className="w-full" variant="outline" asChild>
+      <div className="ml-auto flex flex-wrap items-center gap-3">
+        {session ? (
+          <div className="flex max-w-[150px] min-w-0 items-center gap-2 rounded-full bg-green-500 p-2 sm:p-3">
+            <Image
+              src="/dolares.png"
+              alt="Icon credits"
+              width={30}
+              height={30}
+              className="flex-shrink-0 sm:h-10 sm:w-10"
+            />
+            <p className="min-w-0 truncate text-lg font-bold text-white sm:text-2xl">
+              {credit}
+            </p>
+          </div>
+        ) : (
+          <Button className="w-full sm:w-auto" variant="outline" asChild>
             <Link href="/authentication" className="flex items-center gap-2">
               <LogIn /> Login
             </Link>
           </Button>
-          <InstallPWAButton />
-          <ModeToggle />
-        </div>
-      </header>
-    );
-  }
+        )}
 
-  return (
-    <header className="flex items-center justify-between p-3 dark:bg-[#1C1C1C]">
-      <Link href="/" className="flex items-center gap-2">
-        <Image src="/logo.png" width={85} height={85} alt="logo BrainCash" />
-        <h1 className="text-xl font-bold">BrainCash</h1>
-      </Link>
-
-      <div className="ml-auto flex items-center gap-3">
-        <div className="flex items-center rounded-full bg-green-500 p-3">
-          <p className="flex items-center text-2xl font-bold text-white">
-            <Image
-              src="/dolares.png"
-              alt="Icon credits"
-              width={40}
-              height={40}
-            />
-            {credit}
-          </p>
-        </div>
         <InstallPWAButton />
         <ModeToggle />
       </div>
