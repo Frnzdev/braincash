@@ -43,9 +43,9 @@ const Header = () => {
         <Image src={"/logo.png"} width={85} height={85} alt="logo BrainCash" />
         <h1 className="text-xl font-bold">BrainCash</h1>
       </Link>
-      <div className="flex items-center gap-3">
-        <InstallPWAButton />
-      </div>
+
+      <InstallPWAButton />
+
       <div className="flex items-center rounded-full bg-green-500 p-3">
         <p className="flex items-center text-2xl font-bold text-white">
           <Image
