@@ -76,7 +76,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
+    <div className="flex min-h-screen items-center justify-center">
       <Card className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
         <CardHeader>
           <CardTitle className="text-2xl sm:text-3xl">Criar conta</CardTitle>
@@ -162,7 +162,10 @@ const SignUpForm = () => {
               />
             </CardContent>
             <CardFooter className="flex flex-col gap-3 sm:gap-4">
-              <Button type="submit" className="w-full py-3 sm:py-4">
+              <Button
+                type="submit"
+                className="w-full py-3 sm:py-4 dark:text-white"
+              >
                 Criar conta
               </Button>
             </CardFooter>

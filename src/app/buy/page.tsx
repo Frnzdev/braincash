@@ -68,7 +68,7 @@ const ShopPage = () => {
   };
 
   return (
-    <div className="relative mb-20 p-4">
+    <div className="relative mb-20 h-screen w-screen p-4 dark:bg-black/20">
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {rewards.map((reward) => {
           const isPurchased = reward.status === "purchased";

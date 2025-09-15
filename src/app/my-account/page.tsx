@@ -41,7 +41,7 @@ const PageAccount = () => {
     : null;
 
   return (
-    <div className="flex min-h-screen flex-col items-center px-4 pt-8">
+    <div className="flex min-h-screen flex-col items-center px-4 pt-8 dark:bg-black/20">
       <div className="w-full max-w-5xl">
         <h1 className="mb-8 text-center text-2xl font-bold lg:text-left">
           Suas informações

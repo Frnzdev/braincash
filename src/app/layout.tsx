@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 import Header from "@/components/common/header";
 import Footer from "@/components/mobile/footer";
 import ReactQueryProvider from "@/provider/react-query";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,13 +30,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
         <ReactQueryProvider>
-          <Header />
-          {children}
-          <Footer />
-          <Toaster />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            {children}
+            <Footer />
+            <Toaster />
+          </ThemeProvider>
         </ReactQueryProvider>
       </body>
     </html>

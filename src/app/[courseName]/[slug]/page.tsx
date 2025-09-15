@@ -37,11 +37,11 @@ const CoursePage = async ({ params }: CoursePageProps) => {
 
   return (
     <div className="flex min-h-screen flex-col items-center space-y-8 px-4 py-8 pb-20">
-      <div className="w-full max-w-4xl rounded-lg bg-white p-6 shadow-lg">
-        <h1 className="mb-6 text-center text-2xl font-bold text-gray-800 lg:text-left">
+      <div className="w-full max-w-4xl rounded-lg p-6 shadow-lg dark:bg-[#353535]">
+        <h1 className="mb-6 text-center text-2xl font-bold text-gray-800 lg:text-left dark:text-white">
           {course.name}
         </h1>
-        <p className="mb-6 text-center text-gray-600 lg:text-left">
+        <p className="mb-6 text-center text-gray-600 lg:text-left dark:text-gray-400">
           {course.description}
         </p>
 
@@ -51,7 +51,7 @@ const CoursePage = async ({ params }: CoursePageProps) => {
           {videos.map((video) => (
             <div
               key={video.id}
-              className="flex items-center justify-between rounded bg-gray-100 p-4"
+              className="flex items-center justify-between rounded bg-gray-100 p-4 dark:bg-[#454545]"
             >
               <span>{video.title}</span>
               <Link

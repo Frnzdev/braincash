@@ -12,7 +12,7 @@ const Footer = () => {
   const { data: session } = authClient.useSession();
   if (!session) {
     return (
-      <footer className="bg-accent fixed bottom-0 left-0 z-50 flex w-full items-center justify-between gap-2 px-4 py-2 text-center shadow-md">
+      <footer className="bg-accent fixed bottom-0 left-0 z-50 flex w-full items-center justify-between gap-2 px-4 py-2 text-center shadow-md dark:bg-[#1C1C1C]">
         <div>
           <Link href="/">
             <Image
