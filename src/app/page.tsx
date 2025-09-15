@@ -2,6 +2,7 @@
 
 import CardVideos from "@/components/card-videos";
 import Mascote from "@/components/common/Mascote";
+
 import { authClient } from "@/lib/auth-client";
 
 export default function Home() {
