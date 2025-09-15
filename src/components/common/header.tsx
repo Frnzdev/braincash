@@ -45,11 +45,12 @@ const Header = () => {
             </p>
           </div>
         ) : (
-          <Button className="w-full sm:w-auto" variant="outline" asChild>
-            <Link href="/authentication" className="flex items-center gap-2">
-              <LogIn /> Login
-            </Link>
-          </Button>
+          <Link href="/authentication">
+            <Button variant="outline" className="flex items-center gap-2">
+              <LogIn />
+              Login
+            </Button>
+          </Link>
         )}
 
         <InstallPWAButton />
